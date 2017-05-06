@@ -3,6 +3,7 @@ import React from 'react';
 import { createStore } from 'redux'
 
 
+// Store to represent checkbox state
 const defaultState = { checked: false };
 const reducer = function(state = defaultState, action) {
   switch (action.type) {
@@ -10,14 +11,32 @@ const reducer = function(state = defaultState, action) {
       return { ...state, checked: !state.checked };
   }
   return state;
-}
+};
 const store = createStore(reducer);
 
 
 class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {};
+  }
+
+  componentWillMount() {
+    store.subscribe(() => this.setState(store.getState()));
+  }
+
   render() {
     return (
-      <h1>Hello, World!</h1>
+      <div>
+        <h1>To-dos</h1>
+        <div>Learn Redux&nbsp;
+          <input type="checkbox"
+                 checked={!this.state.checked} />
+        </div>
+        {
+          this.state.checked ? (<h2>Done!</h2>) : null
+        }
+      </div>
     );
   }
 }
