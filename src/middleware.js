@@ -1,4 +1,6 @@
-const promiseMiddleWare = store => next => action => {
+'use strict';
+
+const promiseMiddleware = store => next => action => {
   if (isPromise(action.payload)) {
     action.payload.then(
       res => {
@@ -23,5 +25,5 @@ function isPromise(v) {
 }
 
 export {
-  promiseMiddleWare
+  promiseMiddleware
 };

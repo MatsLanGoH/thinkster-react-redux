@@ -7,10 +7,10 @@ class Header extends React.Component {
     return (
       <nav className="navbar navbar-light">
         <div className="container">
-          <a className="navbar-brand">
-            { this.props.appName.toLowerCase() }
-          </a>
 
+          <a className="navbar-brand">
+            {this.props.appName.toLowerCase()}
+          </a>
         </div>
       </nav>
     );
