@@ -80,4 +80,4 @@ class Login extends React.Component {
   }
 }
 
-export default connect(() => ({}), () => ({}))(Login);
+export default connect(mapStateToProps, mapDispatchToProps)(Login);
