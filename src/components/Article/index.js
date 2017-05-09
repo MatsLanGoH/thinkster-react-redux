@@ -85,7 +85,7 @@ class Article extends React.Component {
 
           <div className="row">
             <CommentContainer
-              comments={this.props.comments} || []
+              comments={this.props.comments || []}
               errors={this.props.commentErrors}
               slug={this.props.params.id}
               currentUser={this.props.currentUser} />
